@@ -1,0 +1,9 @@
+query PokemonList {
+    pokemons(limit: 250) {
+        count
+        results {
+            id
+            ...pokemonListCard_item
+        }
+    }
+}
