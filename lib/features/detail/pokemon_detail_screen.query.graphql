@@ -1,0 +1,8 @@
+query PokemonDetailScreen($name:String!) {
+    pokemon(name:$name) {
+        id
+        sprites {
+            back_default
+        }
+    }
+}

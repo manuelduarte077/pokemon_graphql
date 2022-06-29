@@ -13,17 +13,17 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
-  artemis: ^7.9.0-beta
+  graphql_flutter: ^5.1.1-beta.3
   google_fonts: ^3.0.1
-  http: ^0.13.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^2.0.0
-  build_runner: ^2.1.11
-  json_serializable: ^6.2.0
+  build_runner: ^2.1.11 # Used with Artemis for generating Dart type files
+  json_serializable: ^6.2.0 # Used with Artemis for parsing new types
+  artemis: ^7.9.0-beta # Artemis is only used for the generation, so it isn't needed run-time
 
 flutter:
 
