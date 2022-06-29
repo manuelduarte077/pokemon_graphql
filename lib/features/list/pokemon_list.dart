@@ -13,7 +13,6 @@ class PokemonList extends StatelessWidget {
     return Query(
       options: QueryOptions(
         document: query.document,
-        // este es opcional
         operationName: query.operationName,
       ),
       builder: (result, {fetchMore, refetch}) {
