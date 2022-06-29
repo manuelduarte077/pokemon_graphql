@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon/__generated__/api.graphql.dart';
-import 'package:pokemon/features/detail/PokemonDetailScreen.dart';
+import 'package:pokemon/features/detail/pokemon_detailScreen.dart';
 
 class PokemonListCard extends StatelessWidget {
   const PokemonListCard({

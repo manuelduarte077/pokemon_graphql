@@ -1,8 +1,9 @@
+
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
-import 'package:pokemon/features/detail/PokemonDetailScreen.dart';
-import 'package:pokemon/features/list/PokemonListScreen.dart';
+import 'package:pokemon/features/detail/pokemon_detailScreen.dart';
+import 'package:pokemon/features/list/pokemon_list_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -10,11 +11,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GraphQLProvider(
-      client: ValueNotifier(GraphQLClient(
-        cache: GraphQLCache(store: HiveStore()),
-        link: HttpLink('https://graphql-pokeapi.graphcdn.app'),
-      )),
+      client: ValueNotifier(
+        GraphQLClient(
+          cache: GraphQLCache(store: HiveStore()),
+          link: HttpLink('https://graphql-pokeapi.graphcdn.app'),
+        ),
+      ),
       child: MaterialApp(
+        theme: ThemeData(
+          useMaterial3: true,
+        ),
         debugShowCheckedModeBanner: false,
         onGenerateRoute: (settings) {
           switch (settings.name) {

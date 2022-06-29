@@ -43,7 +43,7 @@ class PokemonDetailScreen extends StatelessWidget {
 
             return Column(
               children: [
-                Image.network(data.pokemon!.sprites!.backDefault!),
+                Image.network(data.pokemon!.sprites!.frontDefault!),
                 Center(
                   child: Text(
                     args.name,
