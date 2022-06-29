@@ -1,7 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
-
+import 'package:flutter/material.dart';
 import '../../__generated__/api.graphql.dart';
+import '../../common_widgets/pokemon_card_content_detail.dart';
+import '../../common_widgets/pokemon_card_detail.dart';
+import '../../common_widgets/pokemon_thumbnail_detail.dart';
 
 class PokemonDetailScreenArgs {
   final String name;
@@ -13,8 +15,6 @@ class PokemonDetailScreen extends StatelessWidget {
   const PokemonDetailScreen({Key? key}) : super(key: key);
 
   static String routeName = '/pokemon';
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -43,16 +43,39 @@ class PokemonDetailScreen extends StatelessWidget {
             final pokemon = data.pokemon;
             if (pokemon == null) Navigator.pop(context);
 
-            return Column(
-              children: [
-                Image.network(data.pokemon!.sprites!.frontDefault!),
-                Center(
-                  child: Text(
-                    args.name,
-                    style: const TextStyle(fontSize: 24),
+            return Container(
+              margin: const EdgeInsets.symmetric(
+                vertical: 16,
+                horizontal: 24,
+              ),
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      PokemonCardDetail(
+                        contentCardDetail: PokemonCardContentDetail(
+                          namePokemon: args.name,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                          ),
+                          abilityPokemon: data.pokemon?.types
+                                  ?.map((ability) => ability!.type!.name)
+                                  .toList() ??
+                              [],
+                          typePokemon:
+                              data.pokemon?.types?.first?.type?.name ?? '',
+                        ),
+                      ),
+                      PokemonThumbnailDetail(
+                        image: Image.network(
+                          data.pokemon!.sprites!.frontDefault!,
+                        ),
+                      ),
+                    ],
                   ),
-                )
-              ],
+                ],
+              ),
             );
           },
         ),

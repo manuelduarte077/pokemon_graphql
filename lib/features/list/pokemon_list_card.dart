@@ -35,6 +35,7 @@ class PokemonListCard extends StatelessWidget {
           PokemonCard(
             contentCard: PokemonCardContent(
               namePokemon: itemFrag.name ?? "<No Name>",
+              style: const TextStyle(fontSize: 22, color: Colors.white),
             ),
             onTap: handleTap,
           ),
