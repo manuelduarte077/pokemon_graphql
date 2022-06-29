@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon/__generated__/api.graphql.dart';
+import 'package:pokemon/common_widgets/pokemon_card_content.dart';
+import 'package:pokemon/common_widgets/widgets.dart';
+
 import 'package:pokemon/features/detail/pokemon_detailScreen.dart';
 
 class PokemonListCard extends StatelessWidget {
@@ -22,11 +25,25 @@ class PokemonListCard extends StatelessWidget {
       }
     }
 
-    return Card(
-      child: ListTile(
-        onTap: handleTap,
-        leading: itemFrag.image != null ? Image.network(itemFrag.image!) : null,
-        title: Text(itemFrag.name ?? "<No Name>"),
+    return Container(
+      margin: const EdgeInsets.symmetric(
+        vertical: 16,
+        horizontal: 24,
+      ),
+      child: Stack(
+        children: [
+          PokemonCard(
+            contentCard: PokemonCardContent(
+              namePokemon: itemFrag.name ?? "<No Name>",
+            ),
+            onTap: handleTap,
+          ),
+          PokemonThumbnail(
+            image: itemFrag.image != 'null'
+                ? Image.network(itemFrag.image!)
+                : null,
+          ),
+        ],
       ),
     );
   }

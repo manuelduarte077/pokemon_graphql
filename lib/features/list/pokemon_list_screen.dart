@@ -16,7 +16,19 @@ class PokemonListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("All Pokemon")),
+      appBar: AppBar(
+        title: const Text("Pokemon GO"),
+        actions: const [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15),
+            child: Icon(
+              Icons.catching_pokemon,
+              size: 35,
+              color: Colors.greenAccent,
+            ),
+          )
+        ],
+      ),
       body: const PokemonList(),
     );
   }

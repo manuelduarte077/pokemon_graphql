@@ -14,6 +14,8 @@ class PokemonDetailScreen extends StatelessWidget {
 
   static String routeName = '/pokemon';
 
+
+
   @override
   Widget build(BuildContext context) {
     final args =
