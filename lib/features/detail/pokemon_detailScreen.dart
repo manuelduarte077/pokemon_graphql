@@ -14,6 +14,8 @@ class PokemonDetailScreen extends StatelessWidget {
 
   static String routeName = '/pokemon';
 
+
+
   @override
   Widget build(BuildContext context) {
     final args =
@@ -43,7 +45,7 @@ class PokemonDetailScreen extends StatelessWidget {
 
             return Column(
               children: [
-                Image.network(data.pokemon!.sprites!.backDefault!),
+                Image.network(data.pokemon!.sprites!.frontDefault!),
                 Center(
                   child: Text(
                     args.name,

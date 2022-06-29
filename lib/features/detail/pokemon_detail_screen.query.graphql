@@ -1,8 +1,21 @@
-query PokemonDetailScreen($name:String!) {
-    pokemon(name:$name) {
+query PokemonDetailScreen($name: String!) {
+    pokemon(name: $name) {
         id
         sprites {
-            back_default
+            front_default
+        }
+        types {
+            type {
+                name
+            }
+        }
+        species {
+            name
+        }
+        abilities {
+            ability {
+                name
+            }
         }
     }
 }

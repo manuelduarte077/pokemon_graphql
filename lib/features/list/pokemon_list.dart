@@ -17,9 +17,12 @@ class PokemonList extends StatelessWidget {
         operationName: query.operationName,
       ),
       builder: (result, {fetchMore, refetch}) {
-        if (result.isLoading) return const CircularProgressIndicator.adaptive();
-        if (result.hasException)
+        if (result.isLoading) {
+          return const Center(child: CircularProgressIndicator.adaptive());
+        }
+        if (result.hasException) {
           return Center(child: Text(result.exception.toString()));
+        }
 
         print("result is $result");
         final data = query.parse(result.data!);

@@ -48,5 +48,5 @@ app.*.map.json
 
 
 
-# Generated GraphQL files
-lib/__generated__/
+
+__generated__/
