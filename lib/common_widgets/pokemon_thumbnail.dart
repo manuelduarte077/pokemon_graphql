@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PokemonThumbnail extends StatelessWidget {
-  const PokemonThumbnail({Key? key, required this.image}) : super(key: key);
+  const PokemonThumbnail({super.key, required this.image});
   final Image? image;
 
   @override

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:pokemon/__generated__/api.graphql.dart';
 import 'package:pokemon/features/list/pokemon_list_card.dart';
 
-import 'package:pokemon/__generated__/api.graphql.dart';
-
 class PokemonList extends StatelessWidget {
-  const PokemonList({Key? key}) : super(key: key);
+  const PokemonList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +22,11 @@ class PokemonList extends StatelessWidget {
           return Center(child: Text(result.exception.toString()));
         }
 
-        print("result is $result");
+        print('result is $result');
         final data = query.parse(result.data!);
 
         final cardList = data.pokemons!.results!.map((pokemon) {
-          print("Pokemon Name: ${pokemon!.name}");
+          print('Pokemon Name: ${pokemon!.name}');
           return PokemonListCard(itemFrag: pokemon);
         }).toList();
 

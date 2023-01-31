@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PokemonCardContent extends StatelessWidget {
-  const PokemonCardContent({Key? key, this.namePokemon, this.style})
-      : super(key: key);
+  const PokemonCardContent({super.key, this.namePokemon, this.style});
 
   final String? namePokemon;
   final TextStyle? style;
@@ -23,9 +22,9 @@ class PokemonCardContent extends StatelessWidget {
             height: 4,
           ),
           Container(
-            margin: const EdgeInsets.symmetric(vertical: 8.0),
-            height: 2.0,
-            width: 18.0,
+            margin: const EdgeInsets.symmetric(vertical: 8),
+            height: 2,
+            width: 18,
             color: const Color(0xff00c6ff),
           ),
         ],
@@ -33,5 +32,3 @@ class PokemonCardContent extends StatelessWidget {
     );
   }
 }
-
-

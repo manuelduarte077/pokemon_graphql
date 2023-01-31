@@ -19,10 +19,10 @@ dev_dependencies:
   artemis: ^7.11.0-beta.1 # Artemis is only used for the generation, so it isn't needed run-time
   build_runner: ^2.3.3 # Used with Artemis for generating Dart type files
 
-  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
   json_serializable: ^6.2.0 # Used with Artemis for parsing new types
+  very_good_analysis: ^3.1.0
 
 flutter:
   uses-material-design: true

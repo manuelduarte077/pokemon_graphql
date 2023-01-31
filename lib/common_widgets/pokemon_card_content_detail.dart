@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class PokemonCardContentDetail extends StatelessWidget {
   const PokemonCardContentDetail({
-    Key? key,
+    super.key,
     this.namePokemon,
     this.style,
     this.abilityPokemon,
     this.typePokemon,
-  }) : super(key: key);
+  });
 
   final String? namePokemon;
   final String? typePokemon;

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
-import 'package:pokemon/features/detail/pokemon_detailScreen.dart';
 import 'package:pokemon/features/list/pokemon_list_screen.dart';
 import 'package:pokemon/features/routes/app_routes.dart';
 
