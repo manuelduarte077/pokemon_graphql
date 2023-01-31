@@ -1,7 +1,7 @@
 name: pokemon
 description: A new Flutter project.
 
-publish_to: 'none'
+publish_to: "none"
 
 version: 1.0.0+1
 
@@ -9,24 +9,20 @@ environment:
   sdk: ">=2.17.1 <3.0.0"
 
 dependencies:
+  cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
-
-  cupertino_icons: ^1.0.2
-  graphql_flutter: ^5.1.1-beta.3
-  google_fonts: ^3.0.1
+  google_fonts: ^4.0.1
+  graphql_flutter: ^5.1.2
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  artemis: ^7.11.0-beta.1 # Artemis is only used for the generation, so it isn't needed run-time
+  build_runner: ^2.3.3 # Used with Artemis for generating Dart type files
 
   flutter_lints: ^2.0.0
-  build_runner: ^2.1.11 # Used with Artemis for generating Dart type files
+  flutter_test:
+    sdk: flutter
   json_serializable: ^6.2.0 # Used with Artemis for parsing new types
-  artemis: ^7.9.0-beta # Artemis is only used for the generation, so it isn't needed run-time
 
 flutter:
-
-
   uses-material-design: true
-
