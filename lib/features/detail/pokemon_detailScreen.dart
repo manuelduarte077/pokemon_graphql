@@ -1,18 +1,17 @@
-import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:flutter/material.dart';
-import '../../__generated__/api.graphql.dart';
-import '../../common_widgets/pokemon_card_content_detail.dart';
-import '../../common_widgets/pokemon_card_detail.dart';
-import '../../common_widgets/pokemon_thumbnail_detail.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:pokemon/__generated__/api.graphql.dart';
+import 'package:pokemon/common_widgets/pokemon_card_content_detail.dart';
+import 'package:pokemon/common_widgets/pokemon_card_detail.dart';
+import 'package:pokemon/common_widgets/pokemon_thumbnail_detail.dart';
 
 class PokemonDetailScreenArgs {
-  final String name;
-
   PokemonDetailScreenArgs(this.name);
+  final String name;
 }
 
 class PokemonDetailScreen extends StatelessWidget {
-  const PokemonDetailScreen({Key? key}) : super(key: key);
+  const PokemonDetailScreen({super.key});
 
   static String routeName = '/pokemon';
 

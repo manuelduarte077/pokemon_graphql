@@ -7,9 +7,9 @@ import 'package:pokemon/features/detail/pokemon_detailScreen.dart';
 
 class PokemonListCard extends StatelessWidget {
   const PokemonListCard({
-    Key? key,
+    super.key,
     required this.itemFrag,
-  }) : super(key: key);
+  });
 
   final PokemonListCardItemMixin itemFrag;
 
@@ -18,7 +18,8 @@ class PokemonListCard extends StatelessWidget {
     void handleTap() {
       if (itemFrag.name == null) {
         ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text("Unable to load this Pokemon")));
+          const SnackBar(content: Text('Unable to load this Pokemon')),
+        );
       } else {
         Navigator.pushNamed(context, PokemonDetailScreen.routeName,
             arguments: PokemonDetailScreenArgs(itemFrag.name!));
@@ -34,7 +35,7 @@ class PokemonListCard extends StatelessWidget {
         children: [
           PokemonCard(
             contentCard: PokemonCardContent(
-              namePokemon: itemFrag.name ?? "<No Name>",
+              namePokemon: itemFrag.name ?? '<No Name>',
               style: const TextStyle(fontSize: 22, color: Colors.white),
             ),
             onTap: handleTap,
