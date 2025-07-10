@@ -1,14 +1,14 @@
-# pokemon
+This is a Kotlin Multiplatform project targeting Android, iOS, Desktop.
 
-Pokemon API Graphql
+* `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
+  It contains several subfolders:
+  - `commonMain` is for code that’s common for all targets.
+  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
+    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
+    `iosMain` would be the right folder for such calls.
 
-# Packages
+* `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
+  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
 
-  - graphql_flutter: ^5.1.1-beta.3
-  - build_runner: ^2.1.11  #Used with Artemis for generating Dart type files
-  - json_serializable: ^6.2.0 # Used with Artemis for parsing new types
-  - artemis: ^7.9.0-beta # Artemis is only used for the generation, so it isn't needed run-time
-  
 
-| ![Home ScreenShots](https://user-images.githubusercontent.com/46093689/176552417-948d8173-dab8-4f66-be95-685735f8ed78.png) | ![Cart ScreenShots](https://user-images.githubusercontent.com/46093689/176552430-37eed3d8-98ff-4ef8-b0c0-9800e96ca877.png) | ![vidoe](https://user-images.githubusercontent.com/46093689/176553664-613b27e5-2f07-4ca7-87b9-28a4932a6093.gif) |
-| ----------------------------------------------- | ----------------------------------------------- | -------------------------------------------------------- |
+Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
