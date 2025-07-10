@@ -83,11 +83,9 @@ private val darkScheme = darkColorScheme(
 )
 
 @Composable
-fun AppTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable() () -> Unit
-) {
-    val colorScheme = if (darkTheme) darkScheme else lightScheme
+fun PokedexTheme(content: @Composable() () -> Unit) {
+    val isDarkTheme = isSystemInDarkTheme()
+    val colorScheme = if (isDarkTheme) darkColorScheme() else lightColorScheme()
 
     MaterialTheme(
         colorScheme = colorScheme,

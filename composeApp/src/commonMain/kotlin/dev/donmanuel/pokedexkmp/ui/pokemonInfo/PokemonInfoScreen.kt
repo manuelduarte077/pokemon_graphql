@@ -25,6 +25,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import dev.donmanuel.pokedexkmp.ui.composables.InfoItem
 import org.koin.compose.viewmodel.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -104,25 +105,5 @@ internal fun PokemonInfoScreen(
                 }
             }
         }
-    }
-}
-
-@Composable
-private fun InfoItem(
-    title: String,
-    infoText: String
-) {
-    Row {
-        Text(
-            text = title,
-            style = MaterialTheme.typography.bodyLarge.copy(
-                fontWeight = FontWeight.SemiBold
-            )
-        )
-        Spacer(modifier = Modifier.weight(1f))
-        Text(
-            text = infoText,
-            style = MaterialTheme.typography.bodyLarge
-        )
     }
 }
